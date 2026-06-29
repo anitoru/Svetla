@@ -6,6 +6,9 @@
 <title>Честит Рожден Ден! 🎂</title>
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
+ <audio id="birthdaySong">
+    <source src="audio/birthday.mp3" type="audio/mpeg">
+</audio>
 
   body {
     min-height: 100vh;
@@ -722,6 +725,9 @@ function extinguish() {
 // ===== REVEAL =====
 function showReveal() {
   // Confetti
+ const song = document.getElementById("birthdaySong");
+
+song.play().catch(err => console.log(err));
   const colors = ['#ff80c0','#ffd700','#80c0ff','#c080ff','#ff9040','#80ffb0'];
   for (let i = 0; i < 60; i++) {
     setTimeout(() => {
