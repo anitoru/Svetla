@@ -754,7 +754,12 @@ song.play().catch(err => console.log(err));
 
   // Show photo
   if (uploadedPhoto) {
-    document.getElementById('revealPhoto').src = uploadedPhoto;
+    const img = document.getElementById("revealPhoto");
+
+    img.src = uploadedPhoto + "?v=" + Date.now();
+    img.style.display = "block";
+
+    document.getElementById("photoPlaceholder").style.display = "none";
     document.getElementById('revealPhoto').style.display = 'block';
     document.getElementById('photoPlaceholder').style.display = 'none';
   }
