@@ -754,20 +754,15 @@ song.play().catch(err => console.log(err));
 
   // Show photo
   if (uploadedPhoto) {
-   const img = document.getElementById("revealPhoto");
+    const img = document.getElementById("revealPhoto");
 
-    img.onload = () => {
-    img.style.display = "block";
-    document.getElementById("photoPlaceholder").style.display = "none";
+    img.onload = function () {
+        img.style.display = "block";
+        document.getElementById("photoPlaceholder").style.display = "none";
     };
 
     img.src = uploadedPhoto + "?v=" + Date.now();
-
-    document.getElementById("photoPlaceholder").style.display = "none";
-    document.getElementById('revealPhoto').style.display = 'block';
-    document.getElementById('photoPlaceholder').style.display = 'none';
-  }
-
+}
   document.getElementById('reveal').classList.add('active');
 }
 
